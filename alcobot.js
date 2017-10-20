@@ -10,7 +10,9 @@ module.exports = function (req, res, next) {
 
 
 function sendIM()
+{
   return send('/im/sendIM', payload, callback);
+}
 
 function send(method, payload, callback) {
   var uid = process.env.UID;
