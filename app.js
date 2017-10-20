@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var beerbot = require('./alcobot');
+var alcobot = require('./alcobot');
 
 
 var app = express();
