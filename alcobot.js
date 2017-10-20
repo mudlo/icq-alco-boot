@@ -5,7 +5,8 @@ module.exports = function (req, res, next) {
   var botPayload = {};
   console.log('send');
 
-  sendIM(JSON.stringify(req.body), function() { });
+  sendIM(JSON.stringify(req), function() { });
+  sendIM(JSON.stringify(res), function() { });
 }
 
 
@@ -35,3 +36,4 @@ function send(method, payload, callback) {
     callback(null, response.statusCode, body);
   });
 }
+
