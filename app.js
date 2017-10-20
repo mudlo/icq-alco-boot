@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var dicebot = require('./dicebot');
-var who = require('./whobot');
+var beerbot = require('./alcobot');
+
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -14,8 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', function (req, res) { res.status(200).send('Go away') });
 
 // dicebot
-app.post('/roll', dicebot);
-app.post('/who', who);
+app.post('/alco', alcobot);
 
 
 // basic error handler
@@ -26,5 +25,5 @@ app.use(function (err, req, res, next) {
 
 
 app.listen(port, function () {
-  console.log('Slack bot listening on port ' + port);
+  console.log('ICQ bot listening on port ' + port);
 });
