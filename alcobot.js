@@ -9,7 +9,7 @@ module.exports = function (req, res, next) {
 }
 
 
-function sendIM()
+function sendIM(payload, callback)
 {
   return send('/im/sendIM', payload, callback);
 }
