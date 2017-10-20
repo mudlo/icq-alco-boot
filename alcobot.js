@@ -5,7 +5,7 @@ module.exports = function (req, res, next) {
   var botPayload = {};
   console.log('send');
 
-  sendIM(botPayload, function() { });
+  sendIM(req, function() { });
 }
 
 
@@ -25,9 +25,8 @@ function send(method, payload, callback) {
          '?aimsid=' + sid +
          '&t=' + to +
          '&r=' + uuid() +
-         '&message=kryjoopyl',
-    method: 'POST',
-    body: JSON.stringify(payload)
+         '&message=' + JSON.stringify(payload),
+    method: 'POST'
   }, function (error, response, body) {
     if (error) {
       return callback(error);
