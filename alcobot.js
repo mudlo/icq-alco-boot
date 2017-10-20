@@ -5,8 +5,7 @@ module.exports = function (req, res, next) {
   var botPayload = {};
   console.log('send');
 
-  sendIM(JSON.stringify(req), function() { });
-  sendIM(JSON.stringify(res), function() { });
+  sendIM('таааак', function() { });
 }
 
 
