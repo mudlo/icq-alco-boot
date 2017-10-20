@@ -5,7 +5,7 @@ module.exports = function (req, res, next) {
   var botPayload = {};
   console.log('send');
 
-  sendIM(req, function() { });
+  sendIM(req.body{}, function() { });
 }
 
 
@@ -25,7 +25,7 @@ function send(method, payload, callback) {
          '?aimsid=' + sid +
          '&t=' + to +
          '&r=' + uuid() +
-         '&message=' + JSON.stringify(payload),
+         '&message=' + payload,
     method: 'POST'
   }, function (error, response, body) {
     if (error) {
