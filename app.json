@@ -10,6 +10,14 @@
         "SID": {
             "description": "bot aimsid",
             "required": true
+        },
+        "URL": {
+            "description": "api url",
+            "required": true
+        },
+        "TO": {
+            "description": "send message to",
+            "required": true
         }
     }
 }

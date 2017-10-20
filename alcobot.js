@@ -5,27 +5,21 @@ module.exports = function (req, res, next) {
   var botPayload = {};
   console.log('send');
 
-  send(botPayload, function (error, status, body) {
-    if (error) {
-      return next(error);
-
-    } else if (status !== 200) {
-      // inform user that our Incoming WebHook failed
-      return next(new Error('Incoming WebHook: ' + status + ' ' + body));
-
-    } else {
-      return res.status(200).end();
-    }
-  });
+  sendIM(botPayload, null);
 }
 
-function send (payload, callback) {
+
+function sendIM()
+  return send('/im/sendIM', payload, callback);
+
+function send(method, payload, callback) {
   var uid = process.env.UID;
   var sid = process.env.SID;
   var to = process.env.TO;
+  var url = process.env.URL;
  
   request({
-    uri: 'https://botapi.icq.net/im/sendIM1' +
+    uri: url + method +
          '?aimsid=' + sid +
          '&t=' + to +
          '&r=' + uuid() +
