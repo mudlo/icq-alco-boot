@@ -25,7 +25,7 @@ function send (payload, callback) {
   var to = process.env.TO;
  
   request({
-    uri: 'https://botapi.icq.net/im/sendIM' +
+    uri: 'https://botapi.icq.net/im/sendIM1' +
          '?aimsid=' + sid +
          '&t=' + to +
          '&r=' + uuid() +
