@@ -1,6 +1,6 @@
 var request = require('request');
 var uuid = require('uuid/v1');
-var qs = require('querystring')
+var querystring = require('querystring')
 
 module.exports = function (req, res, next) {
   var botPayload = {};
@@ -23,7 +23,7 @@ function send(method, payload, callback) {
  
   request({
     uri: url + '?' +
-       method qs.stringify({
+      querystring.stringify({
         'aimsid': sid +
         't': to +
         'r': uuid() +
