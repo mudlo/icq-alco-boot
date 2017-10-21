@@ -24,9 +24,9 @@ function send(method, payload, callback) {
   request({
     uri: url + '?' +
       querystring.stringify({
-        'aimsid': sid +
-        't': to +
-        'r': uuid() +
+        'aimsid': sid,
+        't': to,
+        'r': uuid(),
         'message': payload
       }),
     method: 'POST'
