@@ -1,5 +1,6 @@
 var request = require('request');
 var uuid = require('uuid/v1');
+var qs = require('querystring')
 
 module.exports = function (req, res, next) {
   var botPayload = {};
@@ -21,13 +22,14 @@ function send(method, payload, callback) {
   var url = process.env.URL;
  
   request({
-    uri: url + method +
-         '?aimsid=' + sid +
-         '&t=' + to +
-         '&r=' + uuid() +
-         '&message=' + payload,
-    method: 'POST',
-    message: payload
+    uri: url + '?' +
+       method qs.stringify({
+        'aimsid': sid +
+        't': to +
+        'r': uuid() +
+        'message': payload
+      }),
+    method: 'POST'
   }, function (error, response, body) {
     if (error) {
       return callback(error);
