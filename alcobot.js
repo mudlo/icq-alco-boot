@@ -24,9 +24,10 @@ function send(method, payload, callback) {
     uri: url + method +
          '?aimsid=' + sid +
          '&t=' + to +
-         '&r=' + uuid() +
-         '&message=' + payload,
-    method: 'POST'
+         '&r=' + uuid()// +
+//         '&message=' + payload,
+    method: 'POST',
+    message: payload
   }, function (error, response, body) {
     if (error) {
       return callback(error);
