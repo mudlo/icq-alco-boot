@@ -20,6 +20,14 @@ function send(method, payload, callback) {
   var sid = process.env.SID;
   var to = process.env.TO;
   var url = process.env.URL;
+
+  console.log(url + '?' +
+      querystring.stringify({
+        'aimsid': sid,
+        't': to,
+        'r': uuid(),
+        'message': payload
+      }));
  
   request({
     uri: url + '?' +
