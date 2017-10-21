@@ -21,7 +21,7 @@ function send(method, payload, callback) {
   var to = process.env.TO;
   var url = process.env.URL;
 
-  console.log(url + '?' +
+  console.log(url + method + '?' +
       querystring.stringify({
         'aimsid': sid,
         't': to,
