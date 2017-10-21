@@ -40,6 +40,9 @@ function send(method, payload, callback) {
     method: 'POST'
   }, function (error, response, body) {
     if (error) {
+      console.log(error);
+      console.log(response);
+      console.log(body);
       return callback(error);
     }
 
