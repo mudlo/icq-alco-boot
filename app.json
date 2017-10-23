@@ -1,7 +1,7 @@
 {
     "name": "ICQ bot",
     "description": "xxx",
-    "repository": "yyy",
+    "repository": "https://github.com/mudlo/icq-alco-boot",
     "env": {
         "UID": {
             "description": "bot uid or nick",
