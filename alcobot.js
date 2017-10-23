@@ -37,14 +37,14 @@ function send(method, payload, callback) {
       }));
  
   request({
-    uri: url + '?' +
+    uri: url + method + '?' +
       querystring.stringify({
         'aimsid': sid,
         't': to,
         'r': uuid(),
         'message': payload
       }),
-    method: 'GET'
+    method: 'POST'
   }, function (error, response, body) {
     if (error) {
       console.log(error);
