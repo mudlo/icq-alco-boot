@@ -6,13 +6,22 @@ module.exports = function (req, res, next) {
   var botPayload = {};
   console.log('send');
 
-  sendIM('таааак', function() { });
+  sendIM('таааак');
 }
 
-
-function sendIM(payload, callback)
+function sendIM(payload)
 {
-  return send('/im/sendIM', payload, callback);
+  return send('/im/sendIM', payload, function (error, status, body) {
+    if (error) {
+      return next(error);
+
+    } else if (status !== 200) {
+      // inform user that our Incoming WebHook failed
+      return next(new Error('Incoming WebHook: ' + status + ' ' + body));
+    } else {
+      return res.status(200).end();
+    }
+  });
 }
 
 function send(method, payload, callback) {
