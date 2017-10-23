@@ -16,10 +16,10 @@ function sendIM(payload, callback)
 }
 
 function send(method, payload, callback) {
-  var uid = process.env.UID;
-  var sid = process.env.SID;
-  var to = process.env.TO;
-  var url = process.env.URL;
+  var uid = process.env.BOT_UID;
+  var sid = process.env.BOT_SID;
+  var to = process.env.TO_UID;
+  var url = process.env.BOT_API_URL;
 
   console.log(url + method + '?' +
       querystring.stringify({
