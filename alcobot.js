@@ -44,7 +44,7 @@ function send(method, payload, callback) {
         'r': uuid(),
         'message': payload
       }),
-    method: 'POST'
+    method: 'GET'
   }, function (error, response, body) {
     if (error) {
       console.log(error);
