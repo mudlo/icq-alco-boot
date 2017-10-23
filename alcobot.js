@@ -6,10 +6,10 @@ module.exports = function (req, res, next) {
   var botPayload = {};
   console.log('send');
 
-  sendIM('таааак');
+  sendIM('таааак', next);
 }
 
-function sendIM(payload)
+function sendIM(payload, next)
 {
   return send('/im/sendIM', payload, function (error, status, body) {
     if (error) {
