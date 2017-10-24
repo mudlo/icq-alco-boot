@@ -5,7 +5,7 @@ var querystring = require('querystring')
 module.exports = function (req, res, next) {
   var botPayload = {};
   console.log('send');
-
+  console.log(req);
   sendIM('таааак', res);
 }
 
